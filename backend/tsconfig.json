@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Emplacement et structure */
+    "outDir": "./dist",               // Où les fichiers compilés iront
+    "rootDir": "./src",               // Répertoire contenant le code source
+
+    /* Cibles et modules */
+    "target": "ES6",                  // Version cible de JavaScript
+    "module": "commonjs",             // Module système (utilisé dans Node.js)
+    "moduleResolution": "node",       // Résolution des modules basée sur Node.js
+
+    /* Fonctionnalités TypeScript */
+    "strict": true,                   // Activer toutes les vérifications strictes
+    "strictPropertyInitialization": false, // Désactiver la vérification stricte des propriétés pour TypeORM
+    "esModuleInterop": true,          // Compatibilité avec les modules ES6 (import/export)
+    "forceConsistentCasingInFileNames": true, // Enforce la casse des noms de fichier
+
+    /* Décorateurs pour TypeORM */
+    "experimentalDecorators": true,   // Nécessaire pour les décorateurs
+    "emitDecoratorMetadata": true,    // Inclut les métadonnées nécessaires pour TypeORM
+
+    /* Source Maps pour debugging */
+    "sourceMap": true,                // Génère les fichiers .map pour le débogage
+    "inlineSources": true,            // Inclut les sources directement dans les maps
+
+    /* Autres options */
+    "skipLibCheck": true,             // Ignore la vérification des types dans les fichiers de bibliothèque
+    "resolveJsonModule": true,         // Permet d'importer des fichiers JSON
+
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "types": ["node", "express"]
+  },
+  "include": ["src/**/*", "@types/**/*"],            // Inclut tous les fichiers dans le dossier src
+  "exclude": ["node_modules", "dist"]         // Exclut le dossier node_modules
+}
