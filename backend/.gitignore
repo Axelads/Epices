@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+
+# Dossiers de build (compilation TypeScript, bundling, etc.)
+dist/
+build/
+
+# Fichiers de configuration d'environnement (à garder en local)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache de TypeScript
+*.tsbuildinfo
+
+# Coverage des tests (si tu utilises des outils de coverage)
+coverage/
+
+# Fichiers spécifiques à l'OS
+.DS_Store
+Thumbs.db
+
+# Répertoires de l'éditeur
+.vscode/
+.idea/
+
+# Autres fichiers générés
+*.bak
+*.tmp
