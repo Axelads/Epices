@@ -6,10 +6,8 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import routes from './routes';
 import { errorHandler } from './middlewares/error.middleware';
-
-// Swagger
 import swaggerUi from 'swagger-ui-express';
-import { swaggerSpec } from './swaggerOptions'; // Utilisez le named export
+import { swaggerSpec } from './swaggerOptions';
 
 const app = express();
 
@@ -26,7 +24,4 @@ app.use('/api', routes);
 // Middleware de gestion des erreurs
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default app;
