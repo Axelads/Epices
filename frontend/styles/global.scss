@@ -1,0 +1,35 @@
+// global.scss
+
+// Layout
+@use "./Layout/header";
+@use "./Layout/footer";
+
+// composant Layout
+@use "./Layout/components/serviceModal";
+@use "./Layout/components/searchbar";
+@use "./Layout/components/logo";
+
+//Pages
+@use "./pages/login/login";
+
+// composant Login
+@use "./pages/login/connexionForm";
+@use "./pages/login/inscriptionForm";
+
+@import './_reset.scss';
+
+/* Vos styles globaux */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Exemple de style pour le conteneur principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Ajoutez d'autres styles globaux ici */

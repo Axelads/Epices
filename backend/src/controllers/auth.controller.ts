@@ -8,22 +8,24 @@ import * as userService from '../services/user.service';
 // -----------------------------
 
 // Redirige vers Google pour l'authentification
-export const googleAuthRedirect = passport.authenticate('google', { scope: ['profile', 'email'] });
-
-// Callback après authentification Google
-export const googleAuthCallback = (req: Request, res: Response, next: NextFunction): void => {
-  passport.authenticate('google', { session: false }, (err, user, info) => {
+export const googleAuthCallback = (req, res, next) => {
+  passport.authenticate('google', { session: false }, (err, user) => {
     if (err || !user) {
-      return res.status(400).json({
-        message: 'Something went wrong during authentication',
-        error: err,
-      });
+      return res.status(400).json({ message: 'Something went wrong', error: err });
     }
-    // Génère et renvoie un token JWT
     const token = authService.generateToken(user);
-    return res.json({ token, user });
+
+    // Renvoyer un JSON plutôt qu’un cookie
+    return res.send(`
+      <html>
+        <body onload="window.opener.postMessage('${token}', '*'); window.close();">
+          Authentification réussie ! Vous pouvez fermer cette fenêtre.
+        </body>
+      </html>
+    `);
   })(req, res, next);
 };
+
 
 // -----------------------------
 // Authentification locale

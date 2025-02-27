@@ -1,10 +1,7 @@
 import { Router } from 'express';
-import { 
-  googleAuthRedirect, 
-  googleAuthCallback, 
-  localRegister, 
-  localLogin 
-} from '../controllers/auth.controller';
+import passport from 'passport';
+import { googleAuthCallback, localRegister, localLogin } from '../controllers/auth.controller';
+
 
 const router = Router();
 
@@ -19,7 +16,10 @@ const router = Router();
  *       302:
  *         description: Redirection vers la page de connexion Google.
  */
-router.get('/google', googleAuthRedirect);
+router.get(
+  '/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
 
 /**
  * @swagger

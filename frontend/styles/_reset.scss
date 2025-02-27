@@ -1,0 +1,24 @@
+/* _reset.scss */
+/* Exemple de CSS reset simplifié */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Supprimer les styles par défaut sur les titres */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/* Autres réinitialisations selon vos besoins */

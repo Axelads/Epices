@@ -1,0 +1,31 @@
+.searchForm {
+    display: flex;
+    width: 100%;          // Le formulaire prendra toute la largeur disponible
+    max-width: 600px;     // Limite maximale (modifiable selon vos besoins)
+    margin: 0 auto;       // Centrage du formulaire
+  
+    input[type="text"] {
+      padding: 0.8rem;
+      flex: 1;
+      min-width: 400px;   // Permet de garantir une certaine longueur à l'input
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 15px 0 0 15px;
+      outline: none;
+    }
+  
+    button[type="submit"] {
+      padding: 0.5rem 1rem;
+      border: 1px solid #0070f3;
+      background-color: #0070f3;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 0 15px 15px 0;
+      outline: none;
+  
+      &:hover {
+        background-color: #005bb5;
+      }
+    }
+  }
+  
